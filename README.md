@@ -14,7 +14,7 @@
 
 ## 📌 Giới Thiệu Đề Tài
 
-Đây là project xây dựng **trình mô phỏng (visualizer) thuật toán External Merge Sort** – một thuật toán sắp xếp ngoài (external sorting) được sử dụng khi dữ liệu quá lớn và không thể chứa toàn bộ trong bộ nhớ chính (RAM). Project dựa trên [baseline].(https://github.com/valeriodiste/ExternalMergeSortVisualizer)
+Đây là project xây dựng **trình mô phỏng (visualizer) thuật toán External Merge Sort** – một thuật toán sắp xếp ngoài (external sorting) được sử dụng khi dữ liệu quá lớn và không thể chứa toàn bộ trong bộ nhớ chính (RAM). Project dựa trên [baseline](https://github.com/valeriodiste/ExternalMergeSortVisualizer).
 
 Chương trình giúp minh họa trực quan:
 
