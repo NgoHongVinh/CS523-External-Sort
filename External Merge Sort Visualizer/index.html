@@ -12,12 +12,20 @@
 		<div class="loader-modal">
 
 			<h2 class="loader-title">Nhập Tệp Đầu Vào</h2>
-			<p class="loader-subtitle">Chọn tệp .txt chứa các số thực (mỗi dòng 1 số)</p>
+			<p class="loader-subtitle">
+				Chọn tệp <strong>.bin</strong> chứa các số thực 64-bit (mỗi số 8 byte, định dạng nhị phân)
+			</p>
 
 			<label for="file-input" class="file-button">
-				Chọn tệp
+				Chọn tệp .bin
 			</label>
-			<input type="file" id="file-input" accept=".txt" hidden>
+
+			<input 
+				type="file" 
+				id="file-input" 
+				accept=".bin,application/octet-stream" 
+				hidden
+			>
 
 			<div id="file-name" class="file-name"></div>
 

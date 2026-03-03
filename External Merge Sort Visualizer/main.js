@@ -1277,7 +1277,6 @@ $(document).ready(function () {
 		return;
 	}
 
-	// hiện overlay khi vào trang
 	if (overlay) overlay.classList.add("active");
 
 	fileInput.addEventListener("change", function (e) {
@@ -1289,20 +1288,23 @@ $(document).ready(function () {
 
 		reader.onload = function (event) {
 
-			const text = event.target.result;
+			const buffer = event.target.result;
 
-			// đọc từng dòng thành số thực
-			INPUT_VALUES = text
-				.split(/\r?\n/)
-				.map(l => parseFloat(l.trim()))
-				.filter(v => !isNaN(v));
+			// DataView để đọc từng 8 byte
+			const view = new DataView(buffer);
+
+			INPUT_VALUES = [];
+
+			for (let i = 0; i < buffer.byteLength; i += 8) {
+				const value = view.getFloat64(i, true); 
+				// true = little-endian (quan trọng!)
+				INPUT_VALUES.push(value);
+			}
 
 			console.log("Loaded INPUT_VALUES:", INPUT_VALUES);
 
-			// ẨN overlay sau khi load xong
 			if (overlay) overlay.classList.remove("active");
 
-			// ===== KHỞI ĐỘNG VISUALIZER =====
 			set_selected_speed("speed_1_00");
 			update_actual_speed();
 
@@ -1313,7 +1315,8 @@ $(document).ready(function () {
 			start_updating_phase_of_animation_completion_timer();
 		};
 
-		reader.readAsText(file);
+		// QUAN TRỌNG: đọc dạng binary
+		reader.readAsArrayBuffer(file);
 	});
 
 });
