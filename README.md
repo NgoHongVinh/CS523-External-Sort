@@ -94,9 +94,7 @@ with open("data.bin", "wb") as f:
 ---
 
 ## Hướng Dẫn Sử Dụng
-- Vui lòng tham khảo file:... để biết cách sử dụng (Sẽ update sau)
-- Thêm kiểm tra header file để xác thực dữ liệu
+- Vui lòng tham khảo [file](utils/24522016-Instruction-CS523.Q21.pdf)
 
----
 
 
